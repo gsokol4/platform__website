@@ -20,7 +20,7 @@ export default function Organization() {
           <span style={{ fontSize: "1rem" }}> (for everyone)</span>
         </h1>
         Dev Launchers is a nonprofit intent on empowering people from diverse
-        communities
+        communities Lets see is this works!!!!!
         <div>
           <h2>We love what we do. You should too!</h2>
           <CtaSectionContent>

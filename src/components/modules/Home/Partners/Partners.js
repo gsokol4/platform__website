@@ -64,6 +64,8 @@ export default function Partners() {
           />
           <LogoImage href="https://reactjs.org/" src={reactImage} width="60%" />
         </PartnerList>
+
+        <Wrapper>Hello world!!</Wrapper>
         <div />
         <div />
       </Wrapper>

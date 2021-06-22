@@ -91,9 +91,32 @@ export const CategoryContainer = styled.div`
 export const MembersContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  background-color: orange;
 
   & > li {
     margin-right: 5rem;
     margin-bottom: 1rem;
   }
+`;
+
+export const MemberImage = styled.img`
+  background-color: green;
+  border-radius: 60%;
+  width: 15%;
+  height: auto;
+`;
+export const MemberRole = styled.div`
+  background-color: purple;
+`;
+export const MemberName = styled.div`
+  background-color: red;
+`;
+export const MemberEmail = styled.div`
+  background-color: brown;
+`;
+export const Member = styled.li`
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;

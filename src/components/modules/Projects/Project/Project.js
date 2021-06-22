@@ -10,6 +10,11 @@ import {
   MembersContainer,
   Actions,
   InfoBar,
+  MemberName,
+  MemberRole,
+  MemberEmail,
+  MemberImage,
+  Member
 } from "./StyledProject";
 import Button from "../../../common/Button";
 import Tag from "../../../common/Tag";
@@ -21,7 +26,7 @@ const truncateText = (text, truncateAt, replaceWith) => {
   return text.slice(0, truncateAt) + replaceWith;
 };
 
-const Project = (props) => {
+const Project = props => {
   console.log(props);
   return (
     <div>
@@ -44,7 +49,7 @@ const Project = (props) => {
             </Button>
             <Link
               href={{
-                pathname: "/support-us",
+                pathname: "/support-us"
               }}
               passHref
             >
@@ -135,22 +140,38 @@ const Project = (props) => {
       <CategoryContainer>
         <h4>Leader/s:</h4>
         <MembersContainer>
-          {eval(props.leaders).map((leader) => (
-            <li>
-              <p>{leader.name}</p>
-              <p>{leader.role}</p>
-              <a href={`mailto:${leader.email}`}>Send Email</a>
-            </li>
+          {eval(props.leaders).map(leader => (
+            <>
+              <MemberImage
+                width="200"
+                height="200"
+                src="https://birthdaywiki.com/uploads/64/bruno-1.png"
+              />
+              <Member>
+                <p>{leader.name}</p>
+                <p>{leader.role}</p>
+                <a href={`mailto:${leader.email}`}>Send Email</a>
+              </Member>
+            </>
           ))}
         </MembersContainer>
 
         <h4>Members:</h4>
         <MembersContainer>
-          {eval(props.members).map((member) => (
-            <li>
-              <p>{member.name}</p>
-              <p>{member.role}</p>
-            </li>
+          {eval(props.members).map(member => (
+            <>
+              <MemberImage
+                width="200"
+                height="200"
+                src="https://birthdaywiki.com/uploads/64/bruno-1.png"
+              />
+
+              <Member>
+                <MemberName>{member.name}</MemberName>
+
+                <MemberRole>{member.role}</MemberRole>
+              </Member>
+            </>
           ))}
         </MembersContainer>
       </CategoryContainer>

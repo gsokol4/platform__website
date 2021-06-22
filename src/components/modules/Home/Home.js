@@ -43,6 +43,7 @@ export default function Home() {
   const donateRef = useRef(null);
   return (
     <div>
+      just want to see if this works
       <RainbowBar />
       <HeroImage />
       <HeroOverlay />
