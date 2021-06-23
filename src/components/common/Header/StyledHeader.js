@@ -53,7 +53,7 @@ export const LogoImageHolder = styled.div`
 `;
 export const LogoImage = styled.img.attrs(() => ({
   src: logoMonogramImage,
-  alt: "logo",
+  alt: "Dev Launchers Logo"
 }))`
   display: inline-block;
   width: 100%;
@@ -107,7 +107,7 @@ export const SignInArea = styled.div`
   }
 `;
 export const UserProfilePic = styled.img.attrs(() => ({
-  alt: "profile-pic",
+  alt: "profile-pic"
 }))`
   max-height: 3rem;
   min-height: 2rem;
