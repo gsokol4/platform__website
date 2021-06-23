@@ -29,6 +29,7 @@ export default function Partners() {
           <LogoImage
             href="https://library.austintexas.gov/"
             src={austinLibraryImage}
+            alt={"Logo of the Austin Public Library"}
             width="75%"
           />
         </PartnerList>
@@ -37,11 +38,15 @@ export default function Partners() {
           <LogoImage
             href="https://www.aseprite.org/"
             src={aespriteImage}
+            alt={
+              "Logo of Asesprite - Animated sprite editor and pixel art tool"
+            }
             width="58%"
           />
           <LogoImage
             href="http://krafties.com/"
             src={kraftiesImage}
+            alt={"Logo of Krafties - Fantasy Pet MMORPG Based In Second Life"}
             width="60%"
           />
         </PartnerList>
@@ -50,19 +55,29 @@ export default function Partners() {
           <LogoImage
             href="https://codesandbox.io/"
             src={codesandboxImage}
+            alt={
+              "Logo of Codesandbox - Online editor and IDE for rapid web development"
+            }
             width="40%"
           />
           <LogoImage
             href="https://www.pixilart.com/"
             src={pixilArtImage}
+            alt={"Logo of Pixilart - Pixelart community and tool"}
             width="80%"
           />
           <LogoImage
             href="https://phaser.io/phaser3"
             src={phaser3Image}
+            alt={"Logo of Phaser3 - Javascript game framework"}
             width="60%"
           />
-          <LogoImage href="https://reactjs.org/" src={reactImage} width="60%" />
+          <LogoImage
+            href="https://reactjs.org/"
+            src={reactImage}
+            alt="A JavaScript library for building user interfaces"
+            width="60%"
+          />
         </PartnerList>
         <div />
         <div />
