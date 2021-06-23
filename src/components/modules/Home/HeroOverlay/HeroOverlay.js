@@ -49,7 +49,10 @@ export default function HeroOverlay() {
           </Tagline>
         </MessageArea>
         <ImageArea>
-          <Image src={manGlassesImage} />
+          <Image
+            src={manGlassesImage}
+            alt="Man looking into camera, thinking"
+          />
           {/*}
           <Link href="/members" passHref>
             <Button

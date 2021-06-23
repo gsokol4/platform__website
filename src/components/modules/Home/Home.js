@@ -57,7 +57,10 @@ export default function Home() {
               backgroundColor={theme.colors.ACCENT_1}
             >
               <ColoredCtaEntryTitle>LEARN</ColoredCtaEntryTitle>
-              <ColoredCtaEntryImage src={womanComputerImage} />
+              <ColoredCtaEntryImage
+                src={womanComputerImage}
+                alt="Woman working on computer"
+              />
             </ColoredCtaEntry>
             <ColoredCtaEntry
               onClick={() => {
@@ -66,7 +69,10 @@ export default function Home() {
               backgroundColor={theme.colors.ACCENT_2}
             >
               <ColoredCtaEntryTitle>LEAD</ColoredCtaEntryTitle>
-              <ColoredCtaEntryImage src={manGlassesImage} />
+              <ColoredCtaEntryImage
+                src={manGlassesImage}
+                alt="Man looking into camera, thinking"
+              />
             </ColoredCtaEntry>
             <ColoredCtaEntry
               onClick={() => {
@@ -75,7 +81,10 @@ export default function Home() {
               backgroundColor={theme.colors.ACCENT_4}
             >
               <ColoredCtaEntryTitle>CREATE</ColoredCtaEntryTitle>
-              <ColoredCtaEntryImage src={girlSmilingImage} />
+              <ColoredCtaEntryImage
+                src={girlSmilingImage}
+                alt="Woman looking into camera, smiling"
+              />
             </ColoredCtaEntry>
             <ColoredCtaEntry
               onClick={() => {
@@ -84,7 +93,10 @@ export default function Home() {
               backgroundColor={theme.colors.ACCENT_3}
             >
               <ColoredCtaEntryTitle>DONATE</ColoredCtaEntryTitle>
-              <ColoredCtaEntryImage src={boyFrontImage} />
+              <ColoredCtaEntryImage
+                src={boyFrontImage}
+                alt="Man looking into camera, smiling"
+              />
             </ColoredCtaEntry>
           </ColoredCtaWrapper>
           <Intro />
@@ -116,6 +128,7 @@ export default function Home() {
             </div>
             titleUnderlineColor={theme.colors.ACCENT_1}
             imageSrc={womanComputerImage}
+            imageAlt={"Woman working on computer"}
             imageOutlineColor={theme.colors.NEUTRAL_1}
           />
           <div
@@ -143,6 +156,7 @@ export default function Home() {
             </div>
             titleUnderlineColor={theme.colors.ACCENT_2}
             imageSrc={manGlassesImage}
+            imageAlt={"Man looking into camera, thinking"}
             imageOutlineColor={theme.colors.NEUTRAL_1}
           />
           <div
@@ -174,6 +188,7 @@ export default function Home() {
             </div>
             titleUnderlineColor={theme.colors.ACCENT_4}
             imageSrc={girlSmilingImage}
+            imageAlt={"Woman looking into camera, smiling"}
             imageOutlineColor={theme.colors.NEUTRAL_1}
           />
           <div
@@ -197,6 +212,7 @@ export default function Home() {
             }
             titleUnderlineColor={theme.colors.ACCENT_1}
             imageSrc={boyFrontImage}
+            imageAlt={"Man looking into camera, smiling"}
             imageOutlineColor={theme.colors.NEUTRAL_2}
             mainBackgroundColor={theme.colors.NEUTRAL_1}
             titleFontColor={theme.colors.NEUTRAL_2}

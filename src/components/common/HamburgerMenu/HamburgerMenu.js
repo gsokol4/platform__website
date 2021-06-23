@@ -43,7 +43,7 @@ function HamburgerMenu(props) {
           color: "#d9d9d9",
           display: "flex",
           alignItems: "center",
-          flexDirection: "column",
+          flexDirection: "column"
         }}
       >
         <div className={style.Logo} onClick={handleNavClick}>
@@ -51,7 +51,11 @@ function HamburgerMenu(props) {
             <Link href={"/"} passHref>
               <a className="nav-link">
                 <div className={style.LogoImageHolder}>
-                  <img src={logoMonogramImage} className={style.LogoImage} />
+                  <img
+                    src={logoMonogramImage}
+                    className={style.LogoImage}
+                    alt="Dev Launchers Logo"
+                  />
                 </div>
               </a>
             </Link>
