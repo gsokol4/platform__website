@@ -106,7 +106,14 @@ const NewsLetter = props => {
               }}
               size={3}
             >
-              <label htmlFor="userEmail"></label>
+              <label
+                style={{
+                  fontSize: "0"
+                }}
+                htmlFor="userEmail"
+              >
+                Email Label
+              </label>
               <input
                 id="userEmail"
                 onChange={e => setEmail(e.target.value)}
@@ -164,7 +171,14 @@ const NewsLetter = props => {
               }}
               size={3}
             >
-              <label htmlFor="userEmail"></label>
+              <label
+                style={{
+                  fontSize: "0"
+                }}
+                htmlFor="userEmail"
+              >
+                Email Label
+              </label>
               <input
                 id="userEmail"
                 onChange={e => setEmail(e.target.value)}
@@ -218,7 +232,14 @@ const NewsLetter = props => {
               }}
               size={3}
             >
-              <label htmlFor="userEmail"></label>
+              <label
+                style={{
+                  fontSize: "0"
+                }}
+                htmlFor="userEmail"
+              >
+                Email Label
+              </label>
               <input
                 id="userEmail"
                 onChange={e => setEmail(e.target.value)}
