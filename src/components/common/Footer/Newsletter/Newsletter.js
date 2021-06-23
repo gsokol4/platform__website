@@ -4,21 +4,21 @@ import {
   Col,
   ThankYouMessage,
   ErrorMessage,
-  Secret,
+  Secret
 } from "./StyledNewsletter";
 import validateEmail from "../../../../utils/ValidateEmail";
 import { withTheme } from "styled-components";
 import axios from "axios";
 import { env } from "../../../../utils/EnvironmentVariables";
 
-const NewsLetter = (props) => {
+const NewsLetter = props => {
   const [email, setEmail] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
   const [check, setCheck] = useState(false);
   const [secret, setSecret] = useState(false);
   const [isEmailAlreadyUsed, setIsEmailAlreadyUsed] = useState(false);
 
-  const EmailValidation = (email) => {
+  const EmailValidation = email => {
     if (email == "password") {
       setSecret(true);
     } else if (!validateEmail(email)) {
@@ -26,13 +26,13 @@ const NewsLetter = (props) => {
     } else {
       const res = axios
         .post(env().STRAPI_URL + "/newsletters", {
-          email: email,
+          email: email
         })
         .then(({ data }) => {
           setIsCorrect(true);
           console.log(data);
         })
-        .catch((err) => {
+        .catch(err => {
           setIsEmailAlreadyUsed(true);
           console.error(err);
         });
@@ -51,7 +51,7 @@ const NewsLetter = (props) => {
             fontSize: "7rem",
             marginTop: "10px",
             marginBottom: "20px",
-            textAlign: "center",
+            textAlign: "center"
           }}
         >
           →{" "}
@@ -76,18 +76,18 @@ const NewsLetter = (props) => {
   } else {
     if (check) {
       return (
-        <div className="form">
+        <form className="form" onSubmit={e => e.preventDefault()}>
           <h2
             style={{
               fontSize: "3rem",
               marginTop: "0px",
               marginBottom: "12px",
-              textAlign: "center",
+              textAlign: "center"
             }}
           >
             <span
               style={{
-                fontSize: "3.25rem",
+                fontSize: "3.25rem"
               }}
             >
               ✉
@@ -102,47 +102,50 @@ const NewsLetter = (props) => {
                 borderBottomLeftRadius: "25px",
                 marginLeft: "-5px",
                 marginRight: "5px",
-                outline: "3px solid red",
+                outline: "3px solid red"
               }}
               size={3}
             >
+              <label htmlFor="userEmail"></label>
               <input
                 id="userEmail"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={e => setEmail(e.target.value)}
                 value={email}
                 type="email"
                 placeholder="Enter your email here!"
               />
             </Col>
+
             <Col
               style={{
                 fontWeight: "bold",
                 borderBottomRightRadius: "25px",
-                cursor: "pointer",
+                cursor: "pointer"
               }}
               size={1}
-              onClick={sendEmail}
             >
-              <button id="submitButton">Submit</button>
+              <button id="submitButton" onClick={sendEmail}>
+                Submit
+              </button>
             </Col>
           </Row>
           <ErrorMessage>Please enter a valid email!</ErrorMessage>
-        </div>
+        </form>
       );
     } else if (isEmailAlreadyUsed) {
       return (
-        <div className="form">
+        <form className="form" onSubmit={e => e.preventDefault()}>
           <h2
             style={{
               fontSize: "3rem",
               marginTop: "0px",
               marginBottom: "12px",
-              textAlign: "center",
+              textAlign: "center"
             }}
           >
             <span
               style={{
-                fontSize: "3.25rem",
+                fontSize: "3.25rem"
               }}
             >
               ✉
@@ -157,13 +160,14 @@ const NewsLetter = (props) => {
                 borderBottomLeftRadius: "25px",
                 marginLeft: "-5px",
                 marginRight: "5px",
-                outline: "3px solid red",
+                outline: "3px solid red"
               }}
               size={3}
             >
+              <label htmlFor="userEmail"></label>
               <input
                 id="userEmail"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={e => setEmail(e.target.value)}
                 value={email}
                 type="email"
                 placeholder="Enter your email here!"
@@ -173,31 +177,32 @@ const NewsLetter = (props) => {
               style={{
                 fontWeight: "bold",
                 borderBottomRightRadius: "25px",
-                cursor: "pointer",
+                cursor: "pointer"
               }}
               size={1}
-              onClick={sendEmail}
             >
-              <button id="submitButton">Submit</button>
+              <button id="submitButton" onClick={sendEmail}>
+                Submit
+              </button>
             </Col>
           </Row>
           <ErrorMessage>You already used this email before</ErrorMessage>
-        </div>
+        </form>
       );
     } else {
       return (
-        <div class="form">
+        <form className="form" onSubmit={e => e.preventDefault()}>
           <h2
             style={{
               fontSize: "3rem",
               marginTop: "0px",
               marginBottom: "12px",
-              textAlign: "center",
+              textAlign: "center"
             }}
           >
             <span
               style={{
-                fontSize: "3.25rem",
+                fontSize: "3.25rem"
               }}
             >
               ✉
@@ -209,13 +214,14 @@ const NewsLetter = (props) => {
               style={{
                 backgroundColor: props.theme.colors.ACCENT_2,
                 fontWeight: "bold",
-                borderBottomLeftRadius: "25px",
+                borderBottomLeftRadius: "25px"
               }}
               size={3}
             >
+              <label htmlFor="userEmail"></label>
               <input
                 id="userEmail"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={e => setEmail(e.target.value)}
                 value={email}
                 type="email"
                 placeholder="Enter your email here!"
@@ -225,15 +231,16 @@ const NewsLetter = (props) => {
               style={{
                 fontWeight: "bold",
                 borderBottomRightRadius: "25px",
-                cursor: "pointer",
+                cursor: "pointer"
               }}
               size={1}
-              onClick={sendEmail}
             >
-              <button id="submitButton">Submit</button>
+              <button id="submitButton" onClick={sendEmail}>
+                Submit
+              </button>
             </Col>
           </Row>
-        </div>
+        </form>
       );
     }
   }
