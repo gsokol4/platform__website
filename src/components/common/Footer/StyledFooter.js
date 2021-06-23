@@ -35,7 +35,7 @@ export const Wrapper = styled.div`
 
 export const FooterLogo = styled.img.attrs(() => ({
   src: logoMonogramImage,
-  alt: "logo"
+  alt: "Dev Launchers Logo"
 }))`
   width: 7rem;
   margin-right: 10px;
@@ -100,7 +100,12 @@ export const SocialMediaLink = styled.a.attrs(({ Type }) => {
   }
   return { href, className };
 })`
-  font-size: 5rem;
+  font-size: 0; // So the text in the links doesn't show, but the text can be readable for screenreaders
+
+  ::before {
+    // Only sizes the icons. This makes them still show, even with the above font-size: 0! :)
+    font-size: 5rem;
+  }
   color: ${({ theme }) => theme.colors.ACCENT_4};
 
   transition: 0.3s;
@@ -119,11 +124,11 @@ export const NavEntry = styled.div`
   padding-right: 0.5rem;
   transition: 0.5s;
 
-  color: ${({theme}) => theme.colors.NEUTRAL_2};
+  color: ${({ theme }) => theme.colors.NEUTRAL_2};
 
   &:hover {
-    color: ${({theme}) => theme.colors.ACCENT_4};
-    border-bottom: 0.4rem solid ${({theme}) => getRandomThemeColor(theme)};
+    color: ${({ theme }) => theme.colors.ACCENT_4};
+    border-bottom: 0.4rem solid ${({ theme }) => getRandomThemeColor(theme)};
   }
 
   @media (orientation: portrait) {

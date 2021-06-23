@@ -45,15 +45,15 @@ export default function Footer(props) {
         </Link>
       </FooterNav>
       <SocialMediaContainer>
-        <SocialMediaLink Type="Instagram" />
-        <SocialMediaLink Type="Linkedin" />
+        <SocialMediaLink Type="Instagram">Instagram Link</SocialMediaLink>
+        <SocialMediaLink Type="Linkedin">Linkedin Link</SocialMediaLink>
         <Link href={"/"} passHref className="nav-link">
           <a>
             <FooterLogo />
           </a>
         </Link>
-        <SocialMediaLink Type="Twitch" />
-        <SocialMediaLink Type="Discord" />
+        <SocialMediaLink Type="Twitch">Twitch Link</SocialMediaLink>
+        <SocialMediaLink Type="Discord">Discord Link</SocialMediaLink>
       </SocialMediaContainer>
       <RandomQuote />
       <OrgInfoArea>
