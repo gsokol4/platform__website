@@ -4,10 +4,6 @@ export const Wrapper = styled.div`
   p {
     padding-left: 1rem;
   }
-
-  h4 {
-    margin-top: 5rem;
-  }
 `;
 
 export const CategoriesContainer = styled.div`

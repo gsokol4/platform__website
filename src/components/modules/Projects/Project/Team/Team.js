@@ -12,28 +12,56 @@ const Team = (props) => {
         <u>Team</u>
       </h4>
       <TeamContentContainer>
-        <p style={{ width: "50%" }}>
+        <p>
           <h4>Leader(s)</h4>
           <MembersContainer>
             {projectData?.team.leaders.map((leader) => (
               <p key={leader.id}>
-                <p>{leader.name}</p>
-                <p>{leader.role}</p>
-                <p>
-                  <a href={`mailto:${leader.email}`}>Send Email</a>
-                </p>
+                <div style={{ display: "flex" }}>
+                  <div style={{ flex: "1" }}>
+                    <img
+                      style={{ height: "auto" }}
+                      width="100"
+                      src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/176159565/original/18689bb8acd2b6cb37913d7ecb8eea12f5c6b387/make-among-us-profile-pictures.png"
+                      alt="img"
+                    />
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <p style={{ flex: "1" }}>leader.name</p>
+                    <p style={{ flex: "1" }}>leader.role</p>
+                    <p style={{ flex: "1" }}>
+                      <a href={`mailto:${leader.email}`}>Send Email</a>
+                    </p>
+                  </div>
+                </div>
               </p>
             ))}
           </MembersContainer>
         </p>
 
-        <p style={{ width: "50%" }}>
+        <p>
           <h4>Members</h4>
           <MembersContainer>
             {projectData?.team.members.map((member) => (
               <p key={member.id}>
-                <p>{member.name}</p>
-                <p>{member.role}</p>
+                <div
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <div style={{ flex: "1" }}>
+                    <img
+                      style={{ height: "auto" }}
+                      width="100"
+                      src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/176159565/original/18689bb8acd2b6cb37913d7ecb8eea12f5c6b387/make-among-us-profile-pictures.png"
+                      alt="img"
+                    />
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <p style={{ flex: "1" }}>member.name</p>
+                    <p style={{ flex: "1" }}>member.role</p>
+                  </div>
+                </div>
               </p>
             ))}
           </MembersContainer>
