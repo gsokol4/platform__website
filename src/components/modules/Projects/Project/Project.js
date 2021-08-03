@@ -11,7 +11,7 @@ import {
 import ProjectHero from "./ProjectHero";
 import OpenPositions from "./OpenPositions";
 import Team from "./Team";
-
+import Milestones from "../../UserProfile/Milestones/Milestones";
 import { useProjectsDataContext } from "../../../../context/ProjectsContext";
 
 // eslint-disable-next-line no-unused-vars
@@ -92,6 +92,7 @@ const Project = (props) => {
                 </p>
               ))}
             </CategoryContainer>
+            <Milestones data={projectData.board?.ProjectMilestone} />
           </div>
           <div>
             {/* }

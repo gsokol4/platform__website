@@ -7,7 +7,8 @@ import {
   Description,
 } from "./StyledMilestones";
 
-export default function Milestones() {
+export default function Milestones(props) {
+  const milestones = props.data;
   return (
     <Wrapper>
       <h3
@@ -20,137 +21,29 @@ export default function Milestones() {
       >
         Milestones
       </h3>
-      <TaskGroup>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <Title>
-            Taskgroup Title
-            <Description>
-              Lorum ipsum dolor sit amet, consectetur adipiscing elit.
-            </Description>
-          </Title>
-          <Task primary>
-            Task number 1 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Hit by: *date here*
-            </p>
-          </Task>
-          <Task>
-            Task number 2 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Start by: *date here*
-            </p>
-          </Task>
-          <Task>
-            Task number 3 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Start by: *date here*
-            </p>
-          </Task>
-        </div>
-      </TaskGroup>
-
-      <TaskGroup>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <Title>
-            Taskgroup Title
-            <Description>
-              Lorum ipsum dolor sit amet, consectetur adipiscing elit.
-            </Description>
-          </Title>
-          <Task primary>
-            Task number 1 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Hit by: *date here*
-            </p>
-          </Task>
-          <Task>
-            Task number 2 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Start by: *date here*
-            </p>
-          </Task>
-          <Task>
-            Task number 3 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Start by: *date here*
-            </p>
-          </Task>
-        </div>
-      </TaskGroup>
-
-      <TaskGroup>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <Title>
-            Taskgroup Title
-            <Description>
-              Lorum ipsum dolor sit amet, consectetur adipiscing elit.
-            </Description>
-          </Title>
-          <Task primary>
-            Task number 1 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Hit by: *date here*
-            </p>
-          </Task>
-          <Task>
-            Task number 2 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Start by: *date here*
-            </p>
-          </Task>
-          <Task>
-            Task number 3 will go here!
-            <p
-              style={{
-                marginTop: ".9rem",
-                marginLeft: "-1rem",
-              }}
-            >
-              Start by: *date here*
-            </p>
-          </Task>
-        </div>
-      </TaskGroup>
+      {milestones?.map((milestone, i) => (
+        <TaskGroup key={i}>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <Title>
+              {milestone.title}
+              <Description>{milestone.description}</Description>
+            </Title>
+            {milestone.task.map((task) => (
+              <Task key={i} primary={task.isReached}>
+                {task.title}
+                <p
+                  style={{
+                    marginTop: ".9rem",
+                    marginLeft: "-1rem",
+                  }}
+                >
+                  {task.isReached ? "hit" : "reach"} by: {task.completionDate}
+                </p>
+              </Task>
+            ))}
+          </div>
+        </TaskGroup>
+      ))}
     </Wrapper>
   );
 }
