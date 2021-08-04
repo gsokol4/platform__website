@@ -68,6 +68,7 @@ const Project = (props) => {
             <p key={i}> {text} </p>
           ))}
         </div>
+        <Milestones data={projectData.board?.ProjectMilestone} />
         <CategoriesContainer>
           <div>
             {/* }
@@ -92,7 +93,6 @@ const Project = (props) => {
                 </p>
               ))}
             </CategoryContainer>
-            <Milestones data={projectData.board?.ProjectMilestone} />
           </div>
           <div>
             {/* }
